@@ -1,0 +1,1 @@
+Requirements1. As a user, I want to control the led through an application.2. As a user, I want to control the color and frequency based on the music.
