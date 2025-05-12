@@ -1,1 +1,60 @@
-Requirements1. As a user, I want to control the led through an application.2. As a user, I want to control the color and frequency based on the music.
+## User Requirements
+1. As a user, I want to control the led through an application.
+2. As a user, I want to control the color and frequency based on the music.
+
+## System Requirements
+### Hardware
+- ESP32 or ESP8266 Microcontroller
+- RGB LED Strip(WS2812B-individual addressable)
+- Power Supply(depends on the led strip, eg. 5V 10A for a 5v led strip)
+- 74AHCT125 or 74HCT245 Logic Level Converter(converts the 3.3V signal from your ESP32 to a true 5V signal the LEDs understand)
+- Resistors(330 ohm for data line)
+    Purpose:
+    It protects the first LED from sudden voltage spikes.
+    It improves signal integrity and reduces noise/reflections on the line.
+    Where to place:
+    Between the ESP32 data pin and the LED strip's DIN pin.
+    eg:ESP32 GPIO (e.g., D5) --- [ 330Ω resistor ] --- DIN (LED strip).
+- A mix of male-male, male-female, and female-female jumper wires.
+- Capacitor(1000uF, 6.3V or higher for power supply)
+- Microphone (INMP441, MAX9814, etc. for sound detection)
+- External processor or FFT module
+- LLC & Power Supply & ESP32 connection
+[ESP32 3.3V] ─────┐
+                 │
+                 └────> LV (logic level converter)
+[ESP32 GND] ─────┬────────────────────────┐
+                 │                        │
+[Power GND] ─────┘                        │
+                                          └──> GND on LED strip
+
+[5V Power Supply +] ───────────────┐
+                                   ├──> HV (logic level converter)
+                                   └──> +5V on LED strip
+
+[ESP32 GPIO] ───> A1 (LLC LV side) → B1 (LLC HV side) ───> DIN on LED strip
+
+
+### Software
+- Use FastLED(C++ with Arduino IDE) for controlling the LED strip.
+
+##Programming Setup
+- Arduino IDE
+  Download from https://www.arduino.cc/en/software
+- FastLED Library
+  Go to Sketch > Include Library > Manage Libraries
+  Search for "FastLED" and install the library.
+  Click install
+-Install ESP32/ESP8266 Board
+  Go to File > Preferences
+  Add the following URL to the "Additional Boards Manager URLs" field:
+  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+  Go to Tools > Board > Boards Manager
+  Search for "ESP32" and install the package.
+
+##Programming Workflow
+1. Write code in Arduino IDE using FastLED
+2. Connect ESP32 to your PC via USB
+3. Select the correct board and port in Arduino IDE
+4. Upload the sketch to the ESP32
+5. See the led strip respond
