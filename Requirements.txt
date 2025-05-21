@@ -18,7 +18,8 @@
 - A mix of male-male, male-female, and female-female jumper wires.
 - Capacitor(1000uF, 6.3V or higher for power supply)
 - Microphone (INMP441, MAX9814, etc. for sound detection)
-- External processor or FFT module
+- Fast Fourier Transform(FFT) library for audio analysis
+- Micro USB data cable for programming the ESP32
 - LLC & Power Supply & ESP32 connection
 [ESP32 3.3V] ─────┐
                  │
