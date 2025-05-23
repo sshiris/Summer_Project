@@ -1,0 +1,25 @@
+Learning Checklist (Before Buying)
+
+Phase 1: ESP32 & Arduino IDE
+-Install Arduino IDE
+-Install ESP32 board package
+-Upload "Blink" sketch to ESP32 to confirm setup
+-Learn what GPIO pins are and how to use digitalWrite() and delay()
+
+Phase 2: LED Control Basics
+-Install FastLED library in Arduino IDE
+-Understand WS2812B structure: power, ground, data line
+-Learn how addressable LEDs work (each LED has an internal controller)
+-Write simple code to set LED colors (e.g., red, green, blue)
+
+Phase 3: Electronics & Power
+-Understand why a 330Ω resistor is used on the data line
+-Understand why a 1000µF capacitor is placed across power input
+-Learn how to use a logic level shifter to convert 3.3V to 5V
+-Calculate LED current usage (approx. 60mA per LED at full white)
+
+Phase 4: Sound & FFT
+-Understand microphone options (INMP441, MAX9814)
+-Learn what FFT is (convert time-domain audio to frequency-domain)
+-Explore Arduino FFT libraries (e.g., ArduinoFFT)
+-Learn how to sample audio and convert to a frequency-based LED pattern
