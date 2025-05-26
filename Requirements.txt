@@ -4,23 +4,22 @@
 
 ## System Requirements
 ### Hardware
-- ESP32 or ESP8266 Microcontroller
-- RGB LED Strip(WS2812B-individual addressable)
-- Power Supply(depends on the led strip, eg. 5V 10A for a 5v led strip)
-- 74AHCT125 or 74HCT245 Logic Level Converter(converts the 3.3V signal from your ESP32 to a true 5V signal the LEDs understand)
-- Resistors(330 ohm for data line)
-    Purpose:
-    It protects the first LED from sudden voltage spikes.
-    It improves signal integrity and reduces noise/reflections on the line.
-    Where to place:
-    Between the ESP32 data pin and the LED strip's DIN pin.
-    eg:ESP32 GPIO (e.g., D5) --- [ 330Ω resistor ] --- DIN (LED strip).
-- A mix of male-male, male-female, and female-female jumper wires.
-- Capacitor(1000uF, 6.3V or higher for power supply)
-- Microphone (INMP441, MAX9814, etc. for sound detection)
-- Fast Fourier Transform(FFT) library for audio analysis
-- Micro USB data cable for programming the ESP32
-- LLC & Power Supply & ESP32 connection
+1. ESP32 or ESP8266 Microcontroller
+2. RGB LED Strip(WS2812B-individual addressable)
+3. Power Supply(depends on the led strip, eg. 5V 10A for a 5v led strip)
+4. 74AHCT125 or 74HCT245 Logic Level Converter(converts the 3.3V signal from your ESP32 to a true 5V signal the LEDs understand)
+5. Resistors(330 ohm for data line)
+  5.1 Purpose:
+    - It protects the first LED from sudden voltage spikes.
+    - It improves signal integrity and reduces noise/reflections on the line.
+  5.2 Where to place:
+    - Between the ESP32 data pin and the LED strip data pin
+6. A mix of male-male, male-female, and female-female jumper wires.
+7. Capacitor(1000uF, 6.3V or higher for power supply)
+8. Microphone (INMP441, MAX9814, etc. for sound detection)
+9. Fast Fourier Transform(FFT) library for audio analysis
+10. Micro USB data cable for programming the ESP32
+11. LLC & Power Supply & ESP32 connection
 [ESP32 3.3V] ─────┐
                  │
                  └────> LV (logic level converter)
@@ -37,16 +36,16 @@
 
 
 ### Software
-- Use FastLED(C++ with Arduino IDE) for controlling the LED strip.
+Use FastLED(C++ with Arduino IDE) for controlling the LED strip.
 
 ##Programming Setup
-- Arduino IDE
+1. Arduino IDE
   Download from https://www.arduino.cc/en/software
-- FastLED Library
+2. FastLED Library
   Go to Sketch > Include Library > Manage Libraries
   Search for "FastLED" and install the library.
   Click install
--Install ESP32/ESP8266 Board
+3. Install ESP32/ESP8266 Board
   Go to File > Preferences
   Add the following URL to the "Additional Boards Manager URLs" field:
   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
