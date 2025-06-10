@@ -1,0 +1,13 @@
+| Item                                   | Description                     | Notes                                                                                               |
+| -------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------- |
+|check **ESP32 Development Board**            | Main microcontroller            | Choose a common one like **ESP32 DevKit v1** or **NodeMCU ESP32** (cheap, supported by Arduino IDE) |
+|check **Individually Addressable LED Strip** | e.g. **WS2812B**, **SK6812**    | 5V version recommended; get **60 LEDs/m** or higher for smoother effects                            |
+|check **Power Supply (5V)**                  | Powers the LED strip            | Choose based on your LED count: approx **60mA per LED** at full brightness (see below)              |
+|check Jumper Wires**                       | For connections                 | Male-to-male and female-to-male sets                                                                |
+|check **Breadboard** (optional)              | For prototyping connections     | Optional but helpful if you're not soldering                                                        |
+|check **Capacitor (1000µF, 6.3V or higher)** | Stabilizes power to LEDs        | Placed between 5V and GND near the LED strip start                                                  |
+|check **Resistor (330–470Ω)**                | On data line                    | Protects first LED from signal spikes                                                               |
+|check **Micro USB Cable**                    | Connects ESP32 to your computer | Must support data transfer, not just charging                                                       |
+| **LED Connector (Optional)**           | To plug/unplug LED strip        | JST-SM connectors are common                                                                        |
+check LLC
+check INMP441
